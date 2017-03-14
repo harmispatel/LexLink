@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_sign_up"
+    android:id="@+id/activity_sign_up_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/sign_ingrey_bg"
@@ -56,7 +56,9 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_20" />
         </RelativeLayout>
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <LinearLayout
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
@@ -103,17 +105,18 @@
                 android:layout_width="match_parent"
                 android:hint="@string/post_code"
                 android:maxLines="2"
-                android:inputType="textPostalAddress"
+                android:inputType="number"
                 android:id="@+id/signup_et_post_code"
                 android:layout_height="wrap_content" />
             
             <Button
+                android:id="@+id/signup_button"
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:background="@color/blue"
                 android:text="@string/create_profile"
                 android:textColor="@color/white"
                 android:layout_height="wrap_content" />
-        </LinearLayout>
+        </LinearLayout></ScrollView>
     </LinearLayout>
 </RelativeLayout>

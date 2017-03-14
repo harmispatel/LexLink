@@ -7,5 +7,9 @@
     <!--signup-->
     <color name="blue">#003399</color>
     <color name="white">#ffffff</color>
+    <color name="spinner_bg">#365DAC</color>
 
+    <!--signin-->
+    <color name="button_bg">#FFA200</color>
+    <color name="login_text_color">#0295C7</color>
 </resources>

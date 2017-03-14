@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:background="@drawable/slider"
+
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_marginLeft="50dp"
+        android:paddingLeft="@dimen/ten_dp"
+        android:paddingRight="@dimen/ten_dp"
+        android:layout_width="match_parent"
+        android:weightSum="3"
+        android:gravity="center_vertical"
+        android:layout_height="match_parent">
+       <LinearLayout
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:gravity="center"
+           android:orientation="vertical"
+           android:layout_height="wrap_content">
+           <ImageView
+               android:layout_width="wrap_content"
+               android:src="@drawable/gallery"
+               android:layout_height="wrap_content" />
+           <lexlink.app.com.lexlink.baseviews.BaseTextview
+               android:layout_width="wrap_content"
+               android:text="GALLERY"
+               android:textSize="@dimen/text_12"
+               android:textColor="@color/white"
+               android:layout_height="match_parent" />
+       </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/slider_camera"
+                android:layout_height="wrap_content" />
+            <lexlink.app.com.lexlink.baseviews.BaseTextview
+                android:layout_width="wrap_content"
+                android:text="CAMERA"
+                android:textSize="@dimen/text_12"
+                android:textColor="@color/white"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/slider_delete"
+                android:layout_height="wrap_content" />
+            <lexlink.app.com.lexlink.baseviews.BaseTextview
+                android:layout_width="wrap_content"
+                android:text="DELETE"
+                android:textSize="@dimen/text_12"
+                android:textColor="@color/white"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

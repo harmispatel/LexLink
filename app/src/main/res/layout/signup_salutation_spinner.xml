@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/spinner_bg"
+    android:layout_height="wrap_content">
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+      <RadioButton
+          android:text="Mr"
+          android:checked="true"
+          android:padding="@dimen/ten_dp"
+          android:textSize="@dimen/text_20"
+          android:textColor="@color/white"
+          android:layout_width="wrap_content"
+          android:id="@+id/rb_1"
+          style="@style/signup_custom_radio_style"
+          android:layout_height="wrap_content" />
+        <RadioButton
+            android:text="Ms"
+            android:padding="@dimen/ten_dp"
+            android:textSize="@dimen/text_20"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:id="@+id/rb_2"
+            style="@style/signup_custom_radio_style"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:text="Dr"
+            android:padding="@dimen/ten_dp"
+            android:textSize="@dimen/text_20"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:id="@+id/rb_3"
+            style="@style/signup_custom_radio_style"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:text="Prof"
+            android:padding="@dimen/ten_dp"
+            android:textSize="@dimen/text_20"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:id="@+id/rb_4"
+            style="@style/signup_custom_radio_style"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+</LinearLayout>
