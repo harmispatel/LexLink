@@ -37,4 +37,15 @@
     </string>
 
 
+    <!-- Home -->
+
+    <string name="home">Home</string>
+    <string name="feeds">Feeds</string>
+    <string name="ongoing_claims">Ongoing Claims</string>
+    <string name="past_claims">Past Claims</string>
+    <string name="notificaitons">Notifications</string>
+    <string name="my_profile">My Profile</string>
+    <string name="title_activity_feed">FeedActivity</string>
+
+
 </resources>
