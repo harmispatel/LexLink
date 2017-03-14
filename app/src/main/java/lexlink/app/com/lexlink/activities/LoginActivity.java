@@ -1,6 +1,8 @@
 package lexlink.app.com.lexlink.activities;
 
 import android.content.Context;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.StateListDrawable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -61,6 +63,8 @@ public class LoginActivity extends AppCompatActivity {
                             .make(rootView, "Enter Email", Snackbar.LENGTH_LONG);
                     snackbar.show();
                 }
+
+
                 else if (TextUtils.isEmpty(password))
                 {
                     Snackbar snackbar = Snackbar
@@ -76,14 +80,18 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+
     private void idMapping() {
         rootView= (RelativeLayout) findViewById(R.id.activity_login_root);
-        login_toggle= (ToggleButton) findViewById(R.id.login_toggle);
+
         login_email= (BaseEdittext) findViewById(R.id.login_email);
         login_password= (BaseEdittext) findViewById(R.id.login_password);
         login_frogot_pass= (BaseTextview) findViewById(R.id.login_frogot_pass);
         login_reset_pass= (BaseTextview) findViewById(R.id.login_reset_pass);
         button_sign_in= (Button) findViewById(R.id.button_sign_in);
+
+        //toggle with animation
+        login_toggle= (ToggleButton) findViewById(R.id.login_toggle);
 
     }
     public  void hideKeyboard()
@@ -94,4 +102,6 @@ public class LoginActivity extends AppCompatActivity {
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
+
+
 }

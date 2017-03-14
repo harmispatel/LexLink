@@ -33,7 +33,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                fName=signup_et_first_name.getText().toString().trim();
+                    fName=signup_et_first_name.getText().toString().trim();
                     mName=signup_et_middle_name.getText().toString().trim();
                     lName=signup_et_last_name.getText().toString().trim();
                     address=signup_et_address.getText().toString().trim();
@@ -62,6 +62,19 @@ public class SignUpActivity extends AppCompatActivity {
                             .make(rootView, "Enter Address", Snackbar.LENGTH_LONG);
                     snackbar.show();
                 }
+                else if (fName.length()<3 || mName.length()<3 || lName.length()<3 || address.length()<3)
+                {
+                    Snackbar snackbar = Snackbar
+                            .make(rootView, "Minimum 3 Characters Allowed", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+                else if (!TextUtils.isEmpty(postCode) && postCode.length()<3)
+                {
+
+                    Snackbar snackbar = Snackbar
+                            .make(rootView, "Minimum 3 Characters Allowed", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
                 else
                 {
                     //all data complete
@@ -81,4 +94,5 @@ public class SignUpActivity extends AppCompatActivity {
         signup_et_post_code= (BaseEdittext) findViewById(R.id.signup_et_post_code);
         signup_button= (Button) findViewById(R.id.signup_button);
     }
+
 }
