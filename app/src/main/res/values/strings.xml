@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">LexLink</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+    <!--login-->
+
+    Salutation First Name  Middle Name Last Name Address  City  Post Code
+
+    Create Profile
+    <!--register-->
+    <string name="create_profile">Create Profile</string>
+    <string name="salutation">Salutation</string>
+    <string name="first_name">First Name</string>
+    <string name="middle_name">Middle Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="post_code">Post Code</string>
+
+
+</resources>
