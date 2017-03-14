@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "23.0.2"
     defaultConfig {
         applicationId "lexlink.app.com.lexlink"
         minSdkVersion 17
@@ -29,5 +29,6 @@ dependencies {
     compile 'com.android.support:design:25.1.0'
     testCompile 'junit:junit:4.12'
     compile 'de.hdodenhof:circleimageview:2.1.0'
+
 
 }
