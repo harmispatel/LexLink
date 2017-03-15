@@ -2,8 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:background="@color/spinner_bg"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="30dp"
     android:layout_height="wrap_content">
     <RadioGroup
+        android:id="@+id/salutation_radiogroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
       <RadioButton
@@ -13,7 +16,7 @@
           android:textSize="@dimen/text_20"
           android:textColor="@color/white"
           android:layout_width="wrap_content"
-          android:id="@+id/rb_1"
+          android:id="@+id/rb_mr"
           style="@style/signup_custom_radio_style"
           android:layout_height="wrap_content" />
         <RadioButton
@@ -22,7 +25,7 @@
             android:textSize="@dimen/text_20"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
-            android:id="@+id/rb_2"
+            android:id="@+id/rb_ms"
             style="@style/signup_custom_radio_style"
             android:layout_height="wrap_content" />
         <RadioButton
@@ -31,7 +34,7 @@
             android:textSize="@dimen/text_20"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
-            android:id="@+id/rb_3"
+            android:id="@+id/rb_dr"
             style="@style/signup_custom_radio_style"
             android:layout_height="wrap_content" />
         <RadioButton
@@ -40,7 +43,7 @@
             android:textSize="@dimen/text_20"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
-            android:id="@+id/rb_4"
+            android:id="@+id/rb_prof"
             style="@style/signup_custom_radio_style"
             android:layout_height="wrap_content" />
     </RadioGroup>

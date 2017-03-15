@@ -66,11 +66,24 @@
             android:layout_marginRight="30dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <Spinner
-                android:id="@+id/spinner1"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:prompt="@string/salutation" />
+                android:id="@+id/rl_salutation"
+                android:layout_height="wrap_content">
+                <lexlink.app.com.lexlink.baseviews.BaseTextview
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_salutation"
+                    android:layout_alignParentStart="true"
+                    android:textSize="@dimen/text_18"
+                    android:text="@string/salutation"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/signup_iv_salutation"
+                    android:layout_width="wrap_content"
+                   android:src="@drawable/dropdown"
+                    android:layout_alignParentEnd="true"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
             <lexlink.app.com.lexlink.baseviews.BaseEdittext
                 android:layout_width="match_parent"
                 android:hint="@string/first_name"
@@ -96,11 +109,25 @@
                 android:inputType="textPostalAddress"
                 android:id="@+id/signup_et_address"
                 android:layout_height="wrap_content" />
-            <Spinner
-                android:id="@+id/spinner12"
+            <RelativeLayout
+                android:layout_marginTop="@dimen/ten_dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:prompt="@string/salutation" />
+                android:id="@+id/rl_city"
+                android:layout_height="wrap_content">
+                <lexlink.app.com.lexlink.baseviews.BaseTextview
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_city"
+                    android:layout_alignParentStart="true"
+                    android:textSize="@dimen/text_18"
+                    android:text="@string/city"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/signup_iv_city"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/dropdown"
+                    android:layout_alignParentEnd="true"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
             <lexlink.app.com.lexlink.baseviews.BaseEdittext
                 android:layout_width="match_parent"
                 android:hint="@string/post_code"

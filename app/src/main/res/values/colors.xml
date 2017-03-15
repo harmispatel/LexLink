@@ -7,7 +7,7 @@
     <!--signup-->
     <color name="blue">#003399</color>
     <color name="white">#ffffff</color>
-    <color name="spinner_bg">#365DAC</color>
+    <color name="spinner_bg">#B3365DAC</color>
 
     <!--signin-->
     <color name="button_bg">#FFA200</color>
