@@ -19,9 +19,11 @@ public class JSONCommonKeywords {
     public static String PassWord = "PassWord";
     public static String isSocial = "isSocial";
 
-    public static String DeviceToken = "PassWord";
-    public static String DeviceAccess = "PassWord";
-    public static String profile_pic = "PassWord";
+    public static String DeviceToken = "DeviceToken";
+    public static String DeviceAccess = "DeviceAccess";
+    public static String profile_pic = "profile_pic";
 
+    public static String City = "City";
+    public static String PostalCode = "PostalCode";
 
 }

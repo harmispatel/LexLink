@@ -1,11 +1,10 @@
 package lexlink.app.com.lexlink.activities;
 
+import android.app.ProgressDialog;
 import android.content.Context;
-import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.StateListDrawable;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -13,11 +12,25 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import lexlink.app.com.lexlink.R;
 import lexlink.app.com.lexlink.baseviews.BaseEdittext;
 import lexlink.app.com.lexlink.baseviews.BaseTextview;
+import lexlink.app.com.lexlink.beans.LinkUserbean;
+import lexlink.app.com.lexlink.httpmanager.ApiHandler;
+import lexlink.app.com.lexlink.jsonutil.JSONCommonKeywords;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import utils.CommonUtils;
 
 public class LoginActivity extends AppCompatActivity {
     RelativeLayout rootView;
@@ -75,6 +88,54 @@ public class LoginActivity extends AppCompatActivity {
                 {
 
                 }
+
+
+                if (CommonUtils.isConnectingToInternet(LoginActivity.this)) {
+
+                    final ProgressDialog dialog;
+                    dialog = new ProgressDialog(LoginActivity.this);
+                    dialog.setMessage("please wait....");
+                    dialog.setCanceledOnTouchOutside(false);
+                    dialog.show();
+
+                    Call<LinkUserbean> linkUserbeanCall = ApiHandler.getApiService().signInUser("application/json", createSignUpGsonJsonMap());
+
+                    linkUserbeanCall.enqueue(new Callback<LinkUserbean>() {
+                        @Override
+                        public void onResponse(Call<LinkUserbean> call, Response<LinkUserbean> response) {
+
+
+                            if (response.isSuccessful()) {
+
+                                LinkUserbean linkUserbean = response.body();
+                                if (linkUserbean != null) {
+                                    Log.d("ID", linkUserbean.getUserId());
+                                }
+                                Log.d("MainActivity", "user image = " + response.message());
+                            } else {
+
+                                Log.d("MainActivity", "user image = " + response.message());
+
+                            }
+
+
+                            LinkUserbean userModelResponse = response.body();
+
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<LinkUserbean> call, Throwable t) {
+
+                        }
+
+
+                    });
+
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "No Internet", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -103,5 +164,28 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    private JsonObject createSignUpGsonJsonMap() {
+
+        JsonObject gsonObject = new JsonObject();
+
+
+        try {
+
+            JSONObject jsonObj_forgotpassword = new JSONObject();
+            jsonObj_forgotpassword.put(JSONCommonKeywords.UserName, userName);
+            jsonObj_forgotpassword.put(JSONCommonKeywords.PassWord, password);
+            jsonObj_forgotpassword.put(JSONCommonKeywords.isSocial, "0");
+            jsonObj_forgotpassword.put(JSONCommonKeywords.LoginType, "client");
+            JsonParser jsonParser = new JsonParser();
+            gsonObject = (JsonObject) jsonParser.parse(jsonObj_forgotpassword.toString());
+            Log.e("MY gson.JSON:  ", "AS PARAMETER  " + gsonObject);
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return gsonObject;
+    }
 
 }
