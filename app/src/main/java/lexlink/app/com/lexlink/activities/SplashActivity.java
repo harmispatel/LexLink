@@ -1,10 +1,10 @@
 package lexlink.app.com.lexlink.activities;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import lexlink.app.com.lexlink.R;
 
@@ -35,7 +35,7 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
 
 
-                    Intent intent = new Intent(SplashActivity.this, SignUpActivity.class);
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                     startActivity(intent);
 
 

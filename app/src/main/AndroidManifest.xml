@@ -26,10 +26,6 @@
         <activity android:name=".activities.SignUpActivity"
             android:theme="@style/Theme.Transparent">
         </activity>
-        <!-- Signin Activity -->
-        <activity android:name=".activities.LoginActivity"
-            android:theme="@style/Theme.Transparent">
-        </activity>
     </application>
 
 </manifest>
