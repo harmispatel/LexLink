@@ -43,6 +43,9 @@ public class RegisterRequestBean {
     @SerializedName("DeviceAccess")
     @Expose
     public String deviceAccess;
+    @SerializedName("Category")
+    @Expose
+    public String Category;
 
     /**
      * No args constructor for use in serialization
@@ -62,6 +65,7 @@ public class RegisterRequestBean {
      * @param passWord
      * @param deviceAccess
      * @param city
+     *
      */
 
 
@@ -80,4 +84,35 @@ public class RegisterRequestBean {
         this.deviceAccess = deviceAccess;
     }
 
+    /**
+     * @param middleName
+     * @param lastName
+     * @param postalCode
+     * @param email
+     * @param address
+     * @param deviceToken
+     * @param firstName
+     * @param salutation
+     * @param passWord
+     * @param deviceAccess
+     * @param city
+     * @param category
+     */
+
+    public RegisterRequestBean(String address, String salutation, String firstName, String middleName, String lastName, String email, String city, String postalCode, String passWord, String deviceToken, String deviceAccess, String category) {
+        super();
+        this.address = address;
+        this.salutation = salutation;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.email = email;
+        this.city = city;
+        this.postalCode = postalCode;
+        this.passWord = passWord;
+        this.deviceToken = deviceToken;
+        this.deviceAccess = deviceAccess;
+        this.Category = category;
+
+    }
 }

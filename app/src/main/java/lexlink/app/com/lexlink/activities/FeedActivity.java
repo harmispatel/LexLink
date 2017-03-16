@@ -35,10 +35,6 @@ public class FeedActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-
+        super.onBackPressed();
     }
-
-
-
-
 }

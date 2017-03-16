@@ -6,7 +6,7 @@ package lexlink.app.com.lexlink.enums;
 
 public enum UserType {
 
-    CLIENT("client"), Loyer("lawyer");
+    client("client"), lawyer("lawyer");
 
     String userType = null;
 

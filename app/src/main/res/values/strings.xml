@@ -2,7 +2,7 @@
     <!--common-->
 
     <string name="no_internet_exist">Internet Not Available.</string>
-
+    <string name="lawyer_category">Category</string>
 
     <string name="app_name">LexLink</string>
 
@@ -10,6 +10,13 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <!--error messsage-->
+    <string name="user_sign_up_failed">User Sign Up Failed Please Try Again.</string>
+
+
+    <!--enter messsage-->
+
+    <string name="enter_valid_email">Enter Valid Email.</string>
 
 
     <!--login-->
@@ -29,6 +36,8 @@
     <string name="title_activity_sign_in">Sign in</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="username_password_does_not_valid">Email Or PassWord Invalid.</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -54,5 +63,10 @@
     <string name="my_profile">My Profile</string>
     <string name="title_activity_feed">FeedActivity</string>
 
-
+    <!--client home-->
+    <string name="client_home_my_profile">Me</string>
+    <string name="client_home_my_claim">My Claims</string>
+    <string name="client_home_notification">Notifications</string>
+    <string name="client_home_search_lawyer">Search Lawyers</string>
+    <string name="client_home_create_case">Create Case</string>
 </resources>

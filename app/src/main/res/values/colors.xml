@@ -17,4 +17,14 @@
     <!--signin-->
     <color name="button_color_for_customer">#03bfdb</color>
     <color name="text_color_for_customer">#7b7b7b</color>
+
+    <!--signup-->
+
+    <color name="black">#000000</color>
+
+    <!--signin-->
+
+
+    <color name="header_gray_bg">#d4d4d4</color>
+
 </resources>

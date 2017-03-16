@@ -12,7 +12,6 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -44,7 +43,6 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int i, long id) {
-                Toast.makeText(HomeActivity.this, "GridView Item: " + homebeanArrayList.get(i).getTitle(), Toast.LENGTH_LONG).show();
 
                 Intent  intent=new Intent(HomeActivity.this,FeedActivity.class);
                 startActivity(intent);
