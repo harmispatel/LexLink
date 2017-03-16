@@ -12,11 +12,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import java.util.ArrayList;
 
 import lexlink.app.com.lexlink.R;
-import lexlink.app.com.lexlink.beans.Homebean;
+import lexlink.app.com.lexlink.models.Homebean;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     private ArrayList<Homebean> android;

@@ -37,7 +37,8 @@ public class PostUserData {
     private String PostalCode;
     @SerializedName("DeviceToken")
     private String DeviceToken;
-
+    @SerializedName("Address")
+    private String Address;
 
     @SerializedName("DeviceAccess")
     private String DeviceAccess;
@@ -55,7 +56,7 @@ public class PostUserData {
 
     }
 
-    public PostUserData(String Salutation, String FirstName, String MiddleName, String LastName, String Email, String City, String PostalCode, String PassWord, String DeviceToken, String DeviceAccess) {
+    public PostUserData(String Salutation, String FirstName, String MiddleName, String LastName, String Email, String City, String PostalCode, String PassWord, String Address, String DeviceToken, String DeviceAccess) {
         this.Salutation = Salutation;
         this.FirstName = FirstName;
         this.MiddleName = MiddleName;
@@ -66,6 +67,7 @@ public class PostUserData {
         this.DeviceToken = DeviceToken;
         this.DeviceAccess = DeviceAccess;
         this.PassWord = PassWord;
+        this.Address = Address;
 
 
     }

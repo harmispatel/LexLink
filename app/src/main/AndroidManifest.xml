@@ -25,11 +25,13 @@
             </intent-filter>
         </activity>
         <!-- Signup Activity -->
-        <activity android:name=".activities.SignUpActivity"
+        <activity
+            android:name=".activities.UserSignUpActivity"
             android:theme="@style/Theme.Transparent">
         </activity>
         <!-- Login Activityy -->
-        <activity android:name=".activities.LoginActivity"
+        <activity
+            android:name=".activities.UserLoginActivity"
             android:theme="@style/Theme.Transparent">
         </activity>
     </application>

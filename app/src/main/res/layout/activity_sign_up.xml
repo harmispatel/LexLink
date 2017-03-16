@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/sign_ingrey_bg"
-    tools:context="lexlink.app.com.lexlink.activities.SignUpActivity">
+    tools:context="lexlink.app.com.lexlink.activities.UserSignUpActivity">
 
     <LinearLayout
         android:id="@+id/ll_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -41,69 +41,69 @@
             <!---->
             <LinearLayout
                 android:id="@+id/ll_camera_popup"
-                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="120dp"
-                android:paddingLeft="40dp"
-                android:paddingRight="@dimen/ten_dp"
-                android:layout_width="match_parent"
-                android:weightSum="3"
                 android:background="@drawable/signup_camera_popup"
                 android:gravity="center_vertical"
-                android:layout_height="wrap_content">
+                android:paddingLeft="40dp"
+                android:paddingRight="@dimen/ten_dp"
+                android:visibility="gone"
+                android:weightSum="3">
                 <LinearLayout
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_height="wrap_content">
+                    android:orientation="vertical">
                     <ImageView
                         android:id="@+id/signup_iv_slider_gallery"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/gallery"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/gallery" />
                     <lexlink.app.com.lexlink.baseviews.BaseTextview
                         android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
                         android:text="GALLERY"
-                        android:textSize="@dimen/text_12"
                         android:textColor="@color/white"
-                        android:layout_height="match_parent" />
+                        android:textSize="@dimen/text_12" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_height="wrap_content">
+                    android:orientation="vertical">
                     <ImageView
                         android:id="@+id/signup_iv_slider_camera"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/slider_camera"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/slider_camera" />
                     <lexlink.app.com.lexlink.baseviews.BaseTextview
                         android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
                         android:text="CAMERA"
-                        android:textSize="@dimen/text_12"
                         android:textColor="@color/white"
-                        android:layout_height="match_parent" />
+                        android:textSize="@dimen/text_12" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_height="wrap_content">
+                    android:orientation="vertical">
                     <ImageView
                         android:id="@+id/signup_iv_slider_delete"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/slider_delete"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/slider_delete" />
                     <lexlink.app.com.lexlink.baseviews.BaseTextview
                         android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
                         android:text="DELETE"
-                        android:textSize="@dimen/text_12"
                         android:textColor="@color/white"
-                        android:layout_height="match_parent" />
+                        android:textSize="@dimen/text_12" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -116,8 +116,8 @@
                 android:src="@drawable/camera" />
 
             <lexlink.app.com.lexlink.baseviews.BaseTextview
-                android:layout_width="wrap_content"
                 android:id="@+id/signup_tv_create_pro"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="170dp"
@@ -130,48 +130,48 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <LinearLayout
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="30dp"
-                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical">
                 <RelativeLayout
-                    android:layout_width="match_parent"
                     android:id="@+id/rl_salutation"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <lexlink.app.com.lexlink.baseviews.BaseTextview
-                        android:layout_width="wrap_content"
                         android:id="@+id/tv_salutation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
-                        android:textSize="@dimen/text_18"
                         android:text="@string/salutation"
-                        android:layout_height="wrap_content" />
+                        android:textSize="@dimen/text_18" />
                     <ImageView
                         android:id="@+id/signup_iv_salutation"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/dropdown"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_height="wrap_content" />
+                        android:src="@drawable/dropdown" />
                 </RelativeLayout>
                 <lexlink.app.com.lexlink.baseviews.BaseEdittext
-                    android:layout_width="match_parent"
-                    android:hint="@string/first_name"
-                    android:inputType="textPersonName"
                     android:id="@+id/signup_et_first_name"
-                    android:layout_height="wrap_content" />
-                <lexlink.app.com.lexlink.baseviews.BaseEdittext
                     android:layout_width="match_parent"
-                    android:hint="@string/middle_name"
-                    android:inputType="textPersonName"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/first_name"
+                    android:inputType="textPersonName" />
+                <lexlink.app.com.lexlink.baseviews.BaseEdittext
                     android:id="@+id/signup_et_middle_name"
-                    android:layout_height="wrap_content" />
-                <lexlink.app.com.lexlink.baseviews.BaseEdittext
                     android:layout_width="match_parent"
-                    android:hint="@string/last_name"
-                    android:inputType="textPersonName"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/middle_name"
+                    android:inputType="textPersonName" />
+                <lexlink.app.com.lexlink.baseviews.BaseEdittext
                     android:id="@+id/signup_et_last_name"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/last_name"
+                    android:inputType="textPersonName" />
                 <lexlink.app.com.lexlink.baseviews.BaseEdittext
                     android:id="@+id/signup_et_email"
                     android:layout_width="match_parent"
@@ -188,47 +188,47 @@
 
 
                 <lexlink.app.com.lexlink.baseviews.BaseEdittext
-                    android:layout_width="match_parent"
-                    android:hint="@string/address"
-                    android:maxLines="2"
-                    android:inputType="textPostalAddress"
                     android:id="@+id/signup_et_address"
-                    android:layout_height="wrap_content" />
-                <RelativeLayout
-                    android:layout_marginTop="@dimen/ten_dp"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/address"
+                    android:inputType="textPostalAddress"
+                    android:maxLines="2" />
+                <RelativeLayout
                     android:id="@+id/rl_city"
-                    android:layout_height="wrap_content">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ten_dp">
                     <lexlink.app.com.lexlink.baseviews.BaseTextview
-                        android:layout_width="wrap_content"
                         android:id="@+id/tv_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
-                        android:textSize="@dimen/text_18"
                         android:text="@string/city"
-                        android:layout_height="wrap_content" />
+                        android:textSize="@dimen/text_18" />
                     <ImageView
                         android:id="@+id/signup_iv_city"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/dropdown"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_height="wrap_content" />
+                        android:src="@drawable/dropdown" />
                 </RelativeLayout>
                 <lexlink.app.com.lexlink.baseviews.BaseEdittext
-                    android:layout_width="match_parent"
-                    android:hint="@string/post_code"
-                    android:maxLines="2"
-                    android:inputType="number"
                     android:id="@+id/signup_et_post_code"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/post_code"
+                    android:inputType="number"
+                    android:maxLines="2" />
 
                 <Button
                     android:id="@+id/signup_button"
-                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:background="@color/blue"
                     android:text="@string/create_profile"
-                    android:textColor="@color/white"
-                    android:layout_height="wrap_content" />
+                    android:textColor="@color/white" />
             </LinearLayout></ScrollView>
     </LinearLayout>
 </RelativeLayout>

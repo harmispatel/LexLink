@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +17,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import lexlink.app.com.lexlink.R;
-import lexlink.app.com.lexlink.adapters.HomeAdapter;
-import lexlink.app.com.lexlink.beans.Homebean;
-import lexlink.app.com.lexlink.recyle_decorate.SpacesItemDecoration;
+import lexlink.app.com.lexlink.models.Homebean;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -140,7 +136,7 @@ public class HomeActivity extends AppCompatActivity {
                 textViewAndroid.setText(homebeanArrayList.get(i).getTitle());
                 imageViewAndroid.setImageResource(homebeanArrayList.get(i).getResourceID());
             } else {
-                gridViewAndroid = (View) convertView;
+                gridViewAndroid = convertView;
             }
 
             return gridViewAndroid;

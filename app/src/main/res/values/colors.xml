@@ -12,4 +12,9 @@
     <!--signin-->
     <color name="button_bg">#FFA200</color>
     <color name="login_text_color">#0295C7</color>
+
+
+    <!--signin-->
+    <color name="button_color_for_customer">#03bfdb</color>
+    <color name="text_color_for_customer">#7b7b7b</color>
 </resources>

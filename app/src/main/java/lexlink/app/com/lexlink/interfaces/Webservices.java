@@ -2,6 +2,8 @@ package lexlink.app.com.lexlink.interfaces;
 
 
 import lexlink.app.com.lexlink.models.PostUserData;
+import lexlink.app.com.lexlink.models.RegisterBase;
+import lexlink.app.com.lexlink.models.RegisterRequestBean;
 import lexlink.app.com.lexlink.models.UserLoggedbean;
 import okhttp3.MultipartBody;
 import retrofit2.Call;
@@ -23,5 +25,5 @@ public interface Webservices {
 
     @Multipart
     @POST("userRegister")
-    Call<UserLoggedbean> register(@Part("json_content") PostUserData linkUserbean, @Part MultipartBody.Part image);
+    Call<RegisterBase> register(@Part("json_content") RegisterRequestBean description, @Part MultipartBody.Part image);
 }

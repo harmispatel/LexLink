@@ -6,6 +6,8 @@ public class JSONCommonKeywords {
 
     //Register and Login
     public static String success = "success";
+    public static String Message = "Message";
+
     public static String Profile = "Profile";
     public static String userId = "userId";
     public static String Salutation = "Salutation";

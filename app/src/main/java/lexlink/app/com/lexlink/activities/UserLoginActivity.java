@@ -49,9 +49,10 @@ public class UserLoginActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     Log.e("tag", "toggle=" + b);
-
+                    setupUserView();
                 } else {
                     Log.e("tag", "toggle=" + b);
+                    setupLawyerView();
                 }
             }
         });
@@ -158,10 +159,54 @@ public class UserLoginActivity extends AppCompatActivity {
 
     public void setupUserView() {
         isLawyer = false;
+
+        //toggle with animation
+        login_toggle = (ToggleButton) findViewById(R.id.login_toggle);
+
+
+        rootView.setBackgroundResource(R.drawable.user_bg);
+        login_email.setTextColor(getResources().getColor(R.color.text_color_for_customer));
+        login_email.setHintTextColor(getResources().getColor(R.color.text_color_for_customer));
+
+        login_password.setTextColor(getResources().getColor(R.color.text_color_for_customer));
+        login_password.setHintTextColor(getResources().getColor(R.color.text_color_for_customer));
+
+
+        login_frogot_pass.setTextColor(getResources().getColor(R.color.text_color_for_customer));
+
+
+        login_reset_pass.setTextColor(getResources().getColor(R.color.text_color_for_customer));
+
+
+        button_sign_in.setBackgroundColor(getResources().getColor(R.color.button_color_for_customer));
+        button_sign_in.setTextColor(getResources().getColor(android.R.color.white));
     }
 
     public void setupLawyerView() {
         isLawyer = true;
+
+
+        //toggle with animation
+        login_toggle = (ToggleButton) findViewById(R.id.login_toggle);
+
+
+        rootView.setBackgroundResource(R.drawable.sign_in_blue_bg);
+        login_email.setTextColor(getResources().getColor(R.color.white));
+        login_email.setHintTextColor(getResources().getColor(R.color.login_text_color));
+
+        login_password.setTextColor(getResources().getColor(R.color.white));
+        login_password.setHintTextColor(getResources().getColor(R.color.login_text_color));
+
+
+        login_frogot_pass.setTextColor(getResources().getColor(R.color.login_text_color));
+
+
+        login_reset_pass.setTextColor(getResources().getColor(R.color.login_text_color));
+
+
+        button_sign_in.setBackgroundColor(getResources().getColor(R.color.button_bg));
+        button_sign_in.setTextColor(getResources().getColor(R.color.white));
+
 
     }
 

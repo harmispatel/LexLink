@@ -1,25 +1,13 @@
 package lexlink.app.com.lexlink.activities;
 
 import android.os.Bundle;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
-import java.util.ArrayList;
-
-import lexlink.app.com.lexlink.R;
 import lexlink.app.com.lexlink.adapters.FeedAdapter;
 import lexlink.app.com.lexlink.baseviews.BaseTextview;
-import lexlink.app.com.lexlink.beans.Feedbean;
-import lexlink.app.com.lexlink.recyle_decorate.DividerItemDecoration;
 
 public class FeedActivity extends BaseActivity {
 
-    public static ArrayList<Feedbean> feedbeanArrayList = new ArrayList<>();
 
     BaseTextview baseText_error = null;
     FeedAdapter feedAdapter = null;
