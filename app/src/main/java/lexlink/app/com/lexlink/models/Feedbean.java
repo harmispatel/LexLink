@@ -1,4 +1,4 @@
-package lexlink.app.com.lexlink.beans;
+package lexlink.app.com.lexlink.models;
 
 /**
  * Created by Harmis on 14/03/17.

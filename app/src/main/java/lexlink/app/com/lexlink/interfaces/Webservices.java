@@ -1,12 +1,11 @@
 package lexlink.app.com.lexlink.interfaces;
 
-import com.google.gson.JsonObject;
-import com.squareup.okhttp.RequestBody;
 
-import lexlink.app.com.lexlink.beans.LinkUserbean;
+import lexlink.app.com.lexlink.models.PostUserData;
+import lexlink.app.com.lexlink.models.UserLoggedbean;
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.Header;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -18,14 +17,11 @@ import retrofit2.http.Part;
 
 public interface Webservices {
 
-
     @POST("userLogin")
-    Call<LinkUserbean> signInUser(@Header("Content-Type") String auth_second, @Body JsonObject jsonBody);
+    Call<UserLoggedbean> signInUser(@Body PostUserData linkUserbean);
 
 
     @Multipart
-    @POST("user/signup")
-    Call<LinkUserbean> updateProfilePhotoProcess(@Part("email") RequestBody email, @Part("profile_pic\"; filename=\"pp.png\" ") RequestBody file);
-
-
+    @POST("userRegister")
+    Call<UserLoggedbean> register(@Part("json_content") PostUserData linkUserbean, @Part MultipartBody.Part image);
 }

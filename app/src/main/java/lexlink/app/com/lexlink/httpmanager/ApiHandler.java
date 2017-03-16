@@ -4,7 +4,8 @@ package lexlink.app.com.lexlink.httpmanager;
  * Created by Harmis on 15/03/17.
  */
 
-import com.squareup.okhttp.OkHttpClient;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.concurrent.TimeUnit;
 
@@ -27,14 +28,14 @@ public class ApiHandler {
     public static Webservices getApiService() {
 
         if (apiService == null) {
-            OkHttpClient okHttpClient = new OkHttpClient();
-            okHttpClient.setConnectTimeout(HTTP_TIMEOUT, TimeUnit.MILLISECONDS);
-            okHttpClient.setWriteTimeout(HTTP_TIMEOUT, TimeUnit.MILLISECONDS);
-            okHttpClient.setReadTimeout(HTTP_TIMEOUT, TimeUnit.MILLISECONDS);
 
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create())
-                    .build();
+
+            Gson gson = new GsonBuilder()
+                    .setLenient()
+                    .create();
+            Retrofit retrofit = new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create(gson))
+
+                    .baseUrl(BASE_URL).build();
 
 
             apiService = retrofit.create(Webservices.class);

@@ -1,4 +1,9 @@
 <resources>
+    <!--common-->
+
+    <string name="no_internet_exist">Internet Not Available.</string>
+
+
     <string name="app_name">LexLink</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

@@ -1,4 +1,4 @@
-package lexlink.app.com.lexlink.beans;
+package lexlink.app.com.lexlink.models;
 
 public class Homebean {
 
