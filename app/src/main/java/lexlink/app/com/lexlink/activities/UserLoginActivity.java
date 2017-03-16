@@ -14,17 +14,10 @@ import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.ToggleButton;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import lexlink.app.com.lexlink.R;
 import lexlink.app.com.lexlink.baseviews.BaseEdittext;
 import lexlink.app.com.lexlink.baseviews.BaseTextview;
 import lexlink.app.com.lexlink.httpmanager.ApiHandler;
-import lexlink.app.com.lexlink.jsonutil.JSONCommonKeywords;
 import lexlink.app.com.lexlink.models.PostUserData;
 import lexlink.app.com.lexlink.models.UserLoggedbean;
 import retrofit2.Call;
@@ -32,18 +25,19 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import utils.CommonUtils;
 
-public class LoginActivity extends AppCompatActivity {
+public class UserLoginActivity extends AppCompatActivity {
     RelativeLayout rootView;
     BaseEdittext login_email, login_password;
     BaseTextview login_frogot_pass, login_reset_pass;
     Button button_sign_in;
     ToggleButton login_toggle;
     String userName, password;
+    boolean isLawyer = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.user_login);
 
         idMapping();
         setActions();
@@ -77,12 +71,12 @@ public class LoginActivity extends AppCompatActivity {
                             .make(rootView, "Enter Password", Snackbar.LENGTH_LONG);
                     snackbar.show();
                 } else {
-                    if (CommonUtils.isConnectingToInternet(LoginActivity.this)) {
+                    if (CommonUtils.isConnectingToInternet(UserLoginActivity.this)) {
 
                         PostUserData linkUserbean = new PostUserData(userName, password, "0", "client");
 
                         final ProgressDialog dialog;
-                        dialog = new ProgressDialog(LoginActivity.this);
+                        dialog = new ProgressDialog(UserLoginActivity.this);
                         dialog.setMessage("please wait....");
                         dialog.setCanceledOnTouchOutside(false);
                         dialog.show();
@@ -98,10 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                                     if (response.isSuccessful()) {
 
                                         if (response.body().getSuccess() == 1) {
-                                            Log.e("LastName", response.body().getProfile().toString());
 
-                                            Log.e("Firstname", response.body().getProfile().getFirstName());
-                                            Log.e("LastName", response.body().getProfile().getProfilePic());
 
                                         }
 
@@ -164,31 +155,13 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private JsonObject createSignUpGsonJsonMap() {
 
-        JsonObject gsonObject = new JsonObject();
-        JSONObject jsonObj_forgotpassword = new JSONObject();
-
-
-        try {
-
-            jsonObj_forgotpassword.put(JSONCommonKeywords.UserName, userName);
-            jsonObj_forgotpassword.put(JSONCommonKeywords.PassWord, password);
-            jsonObj_forgotpassword.put(JSONCommonKeywords.isSocial, "0");
-            jsonObj_forgotpassword.put(JSONCommonKeywords.LoginType, "client");
-            JsonParser jsonParser = new JsonParser();
-            gsonObject = (JsonObject) jsonParser.parse(jsonObj_forgotpassword.toString());
-            Log.e("MY gson.JSON:  ", "AS PARAMETER  " + gsonObject);
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        return gsonObject;
+    public void setupUserView() {
+        isLawyer = false;
     }
 
-    interface RetrofitService {
+    public void setupLawyerView() {
+        isLawyer = true;
 
     }
 
