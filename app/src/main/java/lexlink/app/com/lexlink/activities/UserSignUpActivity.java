@@ -58,6 +58,7 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import utils.CommonSession;
 import utils.CommonUtils;
 
 public class UserSignUpActivity extends AppCompatActivity {
@@ -83,6 +84,7 @@ public class UserSignUpActivity extends AppCompatActivity {
     RecyclerView signup_rv_lawyer_category = null;
     String categoryID = null;
     Dialog dialog_lawyer_category = null;
+    CommonSession commonSession = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -90,13 +92,31 @@ public class UserSignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         hideKeyboard();
-
+        commonSession = new CommonSession(UserSignUpActivity.this);
 
         idMapping();
         signup_iv_salutation.setImageResource(R.drawable.dropdown);
         signup_iv_city.setImageResource(R.drawable.dropdown);
         setActions();
-        setupLawyerView();
+
+
+        //We need to set default user type screen.
+        if (commonSession.getUserType() != null) {
+            if (commonSession.getUserType().equals(UserType.client.name())) {
+                setupUserView();
+            } else if (commonSession.getUserType().equals(UserType.lawyer.name())) {
+                setupLawyerView();
+
+            } else {
+                setupLawyerView();
+
+            }
+        } else {
+            setupLawyerView();
+
+        }
+
+
 
     }
 
@@ -480,6 +500,11 @@ public class UserSignUpActivity extends AppCompatActivity {
 
         if (signup_iv_city != null)
             signup_iv_city.setImageResource(R.drawable.dropdown);
+
+
+        finish();
+
+
     }
     private void showCameraPopup() {
         if (ll_camera_popup.getVisibility() == View.GONE) {
@@ -788,6 +813,8 @@ public class UserSignUpActivity extends AppCompatActivity {
         //toggle with animation
         signup_toggle = (ToggleButton) findViewById(R.id.login_toggle);
 
+//this is storing user type flag in session
+        commonSession.storeUserType(UserType.client.name());
 
         rootView.setBackgroundResource(R.drawable.sign_ingrey_bg);
         signup_et_first_name.setTextColor(getResources().getColor(R.color.text_color_for_customer));
@@ -830,6 +857,8 @@ public class UserSignUpActivity extends AppCompatActivity {
     public void setupLawyerView() {
         isLawyer = true;
 
+        //this is storing user type flag in session
+        commonSession.storeUserType(UserType.lawyer.name());
         rl_lawyer_category.setVisibility(View.VISIBLE);
         //toggle with animation
         signup_toggle = (ToggleButton) findViewById(R.id.login_toggle);
@@ -878,5 +907,6 @@ public class UserSignUpActivity extends AppCompatActivity {
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
+
 
 }

@@ -42,12 +42,12 @@ public class CommonSession {
 
     // user type
     public String getUserType() {
-        return sharedPref.getString(LOGGED_USER_USERID, null);
+        return sharedPref.getString(USER_TYPE, null);
     }
 
     public void storeUserType(String user_email) {
         try {
-            editor.putString(LOGGED_USER_USERID, user_email);
+            editor.putString(USER_TYPE, user_email);
             editor.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -56,7 +56,7 @@ public class CommonSession {
 
     public void resetUserTypeD() {
         try {
-            editor.putString(LOGGED_USER_USERID, null);
+            editor.putString(USER_TYPE, null);
             editor.commit();
         } catch (Exception e) {
             e.printStackTrace();

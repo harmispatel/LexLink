@@ -28,6 +28,7 @@ import lexlink.app.com.lexlink.models.UserLoggedbean;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import utils.CommonSession;
 import utils.CommonUtils;
 
 public class UserLoginActivity extends AppCompatActivity {
@@ -38,12 +39,13 @@ public class UserLoginActivity extends AppCompatActivity {
     ToggleButton login_toggle;
     String userName, password;
     boolean isLawyer = true;
+    CommonSession commonSession = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_login);
-
+        commonSession = new CommonSession(UserLoginActivity.this);
         idMapping();
         setActions();
     }
@@ -206,6 +208,8 @@ public class UserLoginActivity extends AppCompatActivity {
         //toggle with animation
         login_toggle = (ToggleButton) findViewById(R.id.login_toggle);
 
+        //this is storing user type flag in session
+        commonSession.storeUserType(UserType.client.name());
 
         rootView.setBackgroundResource(R.drawable.sign_ingrey_bg);
         login_email.setTextColor(getResources().getColor(R.color.text_color_for_customer));
@@ -231,10 +235,31 @@ public class UserLoginActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //We need to set default user type screen.
+        if (commonSession.getUserType() != null) {
+            if (commonSession.getUserType().equals(UserType.client.name())) {
+                setupUserView();
+            } else if (commonSession.getUserType().equals(UserType.lawyer.name())) {
+                setupLawyerView();
+
+            } else {
+                setupLawyerView();
+
+            }
+        } else {
+            setupLawyerView();
+
+        }
+    }
+
     public void setupLawyerView() {
         isLawyer = true;
 
-
+//this is storing user type flag in session
+        commonSession.storeUserType(UserType.lawyer.name());
         //toggle with animation
         login_toggle = (ToggleButton) findViewById(R.id.login_toggle);
 
