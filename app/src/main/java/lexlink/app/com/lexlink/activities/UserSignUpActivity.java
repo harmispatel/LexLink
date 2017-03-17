@@ -69,7 +69,7 @@ public class UserSignUpActivity extends AppCompatActivity {
     RelativeLayout rootView, rl_salutation, rl_city, rl_lawyer_category;
     BaseEdittext signup_et_first_name, signup_et_middle_name, signup_et_last_name, signup_et_address, signup_et_post_code, signup_et_email, signup_et_password_new;
     Button signup_button;
-    ImageView signup_iv_camera, signup_iv_salutation, signup_iv_city, signup_iv_slider_gallery, signup_iv_slider_camera, signup_iv_slider_delete, signup_iv_lawyer_category;
+    ImageView signup_iv_camera, signup_iv_salutation, signup_iv_city, signup_iv_slider_gallery, signup_iv_slider_camera, signup_iv_slider_delete, signup_iv_lawyer_category_new;
     TextView tv_salutation, tv_city;
     String fName, mName, lName, address, postCode, salutation = "Mr", city = "London,Uk", email, passwordNew, profileImgUrl;
     TextView signup_tv_create_pro;
@@ -464,7 +464,7 @@ public class UserSignUpActivity extends AppCompatActivity {
         signup_iv_slider_delete = (ImageView) findViewById(R.id.signup_iv_slider_delete);
         rl_lawyer_category = (RelativeLayout) findViewById(R.id.rl_lawyer_category);
         tv_lawyer_category = (BaseTextview) findViewById(R.id.tv_lawyer_category);
-        signup_iv_lawyer_category = (ImageView) findViewById(R.id.signup_iv_lawyer_category);
+        signup_iv_lawyer_category_new = (ImageView) findViewById(R.id.signup_iv_lawyer_category);
         circleImageView_profile = (CircleImageView) findViewById(R.id.profile_image);
         linearLayout_camera = (LinearLayout) findViewById(R.id.layout_camera);
         linearLayout_gallery = (LinearLayout) findViewById(R.id.layout_gallery);
@@ -621,7 +621,6 @@ public class UserSignUpActivity extends AppCompatActivity {
 //
 //    }
     private void showLawyerPopup() {
-        signup_iv_lawyer_category.setImageResource(R.drawable.dropdown2);
         dialog_lawyer_category = new Dialog(UserSignUpActivity.this);
         dialog_lawyer_category.setContentView(R.layout.signup_city_dialog);
         dialog_lawyer_category.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
@@ -824,7 +823,7 @@ public class UserSignUpActivity extends AppCompatActivity {
         tv_salutation.setTextColor(getResources().getColor(R.color.text_color_for_customer));
 
         signup_iv_salutation.setImageResource(R.drawable.dropdown);
-        signup_iv_lawyer_category.setImageResource(R.drawable.dropdown);
+        signup_iv_lawyer_category_new.setImageResource(R.drawable.dropdown);
 
     }
 
@@ -868,7 +867,7 @@ public class UserSignUpActivity extends AppCompatActivity {
         signup_button.setTextColor(getResources().getColor(android.R.color.white));
 
         signup_iv_salutation.setImageResource(R.drawable.white_down_arrow);
-        signup_iv_lawyer_category.setImageResource(R.drawable.white_down_arrow);
+        signup_iv_lawyer_category_new.setImageResource(R.drawable.white_down_arrow);
 
     }
 
