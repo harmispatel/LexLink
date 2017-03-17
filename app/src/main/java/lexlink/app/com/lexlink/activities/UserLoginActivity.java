@@ -12,6 +12,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.google.gson.Gson;
@@ -46,6 +47,7 @@ public class UserLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_login);
         commonSession = new CommonSession(UserLoginActivity.this);
+        commonSession.resetUserTypeD();
         idMapping();
         setActions();
     }
@@ -201,12 +203,81 @@ public class UserLoginActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //We need to set default user type screen.
+        try {
+            Toast.makeText(UserLoginActivity.this, "onResume", Toast.LENGTH_LONG).show();
+            if (commonSession.getUserType() != null) {
+                if (commonSession.getUserType().equals(UserType.client.name())) {
+                    setupUserView();
+
+                } else if (commonSession.getUserType().equals(UserType.lawyer.name())) {
+                    setupLawyerView();
+
+                } else {
+                    setupLawyerView();
+
+                }
+            } else {
+                setupLawyerView();
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        //We need to set default user type screen.
+        try {
+            Toast.makeText(UserLoginActivity.this, "onRestart", Toast.LENGTH_LONG).show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setupLawyerView() {
+        isLawyer = true;
+
+//this is storing user type flag in session
+        commonSession.storeUserType(UserType.lawyer.name());
+        //toggle with animation
+
+
+        login_toggle.setSelected(false);
+
+
+        rootView.setBackgroundResource(R.drawable.sign_in_blue_bg);
+        login_email.setTextColor(getResources().getColor(R.color.white));
+        login_email.setHintTextColor(getResources().getColor(R.color.login_text_color));
+
+        login_password.setTextColor(getResources().getColor(R.color.white));
+        login_password.setHintTextColor(getResources().getColor(R.color.login_text_color));
+
+
+        login_frogot_pass.setTextColor(getResources().getColor(R.color.login_text_color));
+
+
+        login_reset_pass.setTextColor(getResources().getColor(R.color.login_text_color));
+
+
+        button_sign_in.setBackgroundColor(getResources().getColor(R.color.button_bg));
+        button_sign_in.setTextColor(getResources().getColor(R.color.white));
+
+        button_sign_up.setBackgroundColor(getResources().getColor(R.color.button_bg));
+        button_sign_up.setTextColor(getResources().getColor(android.R.color.white));
+    }
+
     public void setupUserView() {
         isLawyer = false;
 
+        login_toggle.setSelected(true);
 
-        //toggle with animation
-        login_toggle = (ToggleButton) findViewById(R.id.login_toggle);
 
         //this is storing user type flag in session
         commonSession.storeUserType(UserType.client.name());
@@ -233,56 +304,6 @@ public class UserLoginActivity extends AppCompatActivity {
         button_sign_up.setTextColor(getResources().getColor(android.R.color.white));
 
 
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        //We need to set default user type screen.
-        if (commonSession.getUserType() != null) {
-            if (commonSession.getUserType().equals(UserType.client.name())) {
-                setupUserView();
-            } else if (commonSession.getUserType().equals(UserType.lawyer.name())) {
-                setupLawyerView();
-
-            } else {
-                setupLawyerView();
-
-            }
-        } else {
-            setupLawyerView();
-
-        }
-    }
-
-    public void setupLawyerView() {
-        isLawyer = true;
-
-//this is storing user type flag in session
-        commonSession.storeUserType(UserType.lawyer.name());
-        //toggle with animation
-        login_toggle = (ToggleButton) findViewById(R.id.login_toggle);
-
-
-        rootView.setBackgroundResource(R.drawable.sign_in_blue_bg);
-        login_email.setTextColor(getResources().getColor(R.color.white));
-        login_email.setHintTextColor(getResources().getColor(R.color.login_text_color));
-
-        login_password.setTextColor(getResources().getColor(R.color.white));
-        login_password.setHintTextColor(getResources().getColor(R.color.login_text_color));
-
-
-        login_frogot_pass.setTextColor(getResources().getColor(R.color.login_text_color));
-
-
-        login_reset_pass.setTextColor(getResources().getColor(R.color.login_text_color));
-
-
-        button_sign_in.setBackgroundColor(getResources().getColor(R.color.button_bg));
-        button_sign_in.setTextColor(getResources().getColor(R.color.white));
-
-        button_sign_up.setBackgroundColor(getResources().getColor(R.color.button_bg));
-        button_sign_up.setTextColor(getResources().getColor(android.R.color.white));
     }
 
 }

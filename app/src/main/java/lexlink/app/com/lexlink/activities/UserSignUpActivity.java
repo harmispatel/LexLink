@@ -66,7 +66,7 @@ public class UserSignUpActivity extends AppCompatActivity {
     private static final int SELECT_PICTURE_FROM_CAMERA = 2;
     String TAG = "SignUpActivity";
     LinearLayout ll_camera_popup;
-    ToggleButton signup_toggle;
+    ToggleButton signup_toggle_new;
     RelativeLayout rootView, rl_salutation, rl_city, rl_lawyer_category;
     BaseEdittext signup_et_first_name, signup_et_middle_name, signup_et_last_name, signup_et_address, signup_et_post_code, signup_et_email, signup_et_password_new;
     Button signup_button;
@@ -100,7 +100,7 @@ public class UserSignUpActivity extends AppCompatActivity {
         setActions();
 
 
-        //We need to set default user type screen.
+        /*//We need to set default user type screen.
         if (commonSession.getUserType() != null) {
             if (commonSession.getUserType().equals(UserType.client.name())) {
                 setupUserView();
@@ -116,12 +116,12 @@ public class UserSignUpActivity extends AppCompatActivity {
 
         }
 
-
+*/
 
     }
 
     private void setActions() {
-        signup_toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        signup_toggle_new.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
@@ -460,11 +460,11 @@ public class UserSignUpActivity extends AppCompatActivity {
 
 
     private void idMapping() {
+        signup_toggle_new = (ToggleButton) findViewById(R.id.signup_toggle_new);
         rootView = (RelativeLayout) findViewById(R.id.activity_sign_up_root);
         ll_camera_popup = (LinearLayout) findViewById(R.id.ll_camera_popup);
         rl_salutation = (RelativeLayout) findViewById(R.id.rl_salutation);
         rl_city = (RelativeLayout) findViewById(R.id.rl_city);
-        signup_toggle = (ToggleButton) findViewById(R.id.signup_toggle);
         signup_iv_salutation = (ImageView) findViewById(R.id.signup_iv_salutation);
         signup_iv_city = (ImageView) findViewById(R.id.signup_iv_city);
         signup_iv_camera = (ImageView) findViewById(R.id.signup_iv_camera);
@@ -810,11 +810,11 @@ public class UserSignUpActivity extends AppCompatActivity {
     public void setupUserView() {
         isLawyer = false;
         rl_lawyer_category.setVisibility(View.GONE);
-        //toggle with animation
-        signup_toggle = (ToggleButton) findViewById(R.id.login_toggle);
 
 //this is storing user type flag in session
         commonSession.storeUserType(UserType.client.name());
+        //  signup_toggle_new.setSelected(true);
+
 
         rootView.setBackgroundResource(R.drawable.sign_ingrey_bg);
         signup_et_first_name.setTextColor(getResources().getColor(R.color.text_color_for_customer));
@@ -859,9 +859,9 @@ public class UserSignUpActivity extends AppCompatActivity {
 
         //this is storing user type flag in session
         commonSession.storeUserType(UserType.lawyer.name());
+        // signup_toggle_new.setSelected(false);
+
         rl_lawyer_category.setVisibility(View.VISIBLE);
-        //toggle with animation
-        signup_toggle = (ToggleButton) findViewById(R.id.login_toggle);
         rootView.setBackgroundResource(R.drawable.sign_in_blue_bg);
         signup_et_first_name.setTextColor(getResources().getColor(R.color.white));
         signup_et_first_name.setHintTextColor(getResources().getColor(R.color.login_text_color));
